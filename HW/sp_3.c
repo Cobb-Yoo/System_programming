@@ -33,8 +33,8 @@ void cal(char* bp){
 			break;
 		case 2:
 			strcpy(sy[sy_c++]," ");
-			strcpy(co[co_c++]," ");
-			strcpy(op[op_c++],tmp[1]);
+			strcpy(co[co_c++],tmp[1]);
+			strcpy(op[op_c++]," ");
 			break;
 		default:
 			break;
@@ -55,21 +55,21 @@ int main() {
 		cal(buf);// 각 배열에 저장. 
  	}
 
-	for(i=1;i<=sy_c;i++){
+	for(i=0;i<=sy_c;i++){
  		printf("%10s ",sy[i]);
- 		if(i%10==0 && i!=0) printf("\n");
+ 		if((i+1)%10==0 && i!=0) printf("\n");
 	}
 	printf("\n---end symbol\n");
 
-	for(i=1;i<=co_c;i++){
+	for(i=0;i<=co_c;i++){
  		printf("%10s ",co[i]);
- 		if(i%10==0 && i!=0) printf("\n");
+ 		if((i+1)%10==0 && i!=0) printf("\n");
 	}
 	printf("\n---end command\n");
 
- 	for(i=1;i<=op_c;i++){
+ 	for(i=0;i<=op_c;i++){
  		printf("%10s ",op[i]);
- 		if(i%10==0 && i!=0) printf("\n");
+ 		if((i+1)%10==0 && i!=0) printf("\n");
 	}
 	printf("\n---end operand\n");
 	
