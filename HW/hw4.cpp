@@ -20,16 +20,15 @@ int getNumber(char line[]){
 					}
 				}
 				total += sum;
-				printf("%s = %d\n",tmp,sum);
 				sum = 0;
 				break;
 				
 			case 'C':
 				for(i=2;i<strlen(tmp)-1;i++){					
-					sum = sum * 16 + (int)(tmp[i]);
+					sum = sum << 8; //비트연산이 곱셈연산보다 빠르다는 것을 이용함 
+					sum |= tmp[i]; // 단순한 덧셈으로 하면 값이 다른 것이 나옴. 
 				}
 				total += sum;
-				printf("%s = %d\n",tmp,sum);
 				sum = 0;
 				break;
 				
@@ -38,7 +37,6 @@ int getNumber(char line[]){
 					sum = sum * 10 + (int)(tmp[i]-'0');
 				}
 				total += sum;
-				printf("%s = %d\n",tmp,sum);
 				sum = 0;
 				break;
 		}
