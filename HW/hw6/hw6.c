@@ -10,11 +10,13 @@ struct OPTAB{
 int count =0;
 int total=0;
 
-void getLine(char line[]){
+void getLine(char *line){
 	int i;
 	int flag=0;
 	
-	for(i=0;i<5;i++){
+	line=strtok(line,"\n");
+	
+	for(i=0;5;i++){
 		if(!strcmp(Wordtab[i].name,line)){
 			count++;
 			printf("%d, ",count);
@@ -41,8 +43,7 @@ main(){
 	
 	char line[80];
 	
-	while(!feof(f)){
-		fscanf(f,"%s",line);
+	while(fgets(line,80,f) != NULL){
 		getLine(line);
 	}
 	
