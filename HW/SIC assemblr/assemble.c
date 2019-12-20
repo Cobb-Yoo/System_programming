@@ -351,7 +351,7 @@ void pass2(){
 	int oplist_len=0;
 		
 	FILE *f = fopen("sample.s","r");
-	FILE *w = fopen("assemler.s","w");
+	FILE *w = fopen("assemler.o","w");
 	
 	if(f == NULL){
 		printf("ERROR in make file\n");
@@ -435,6 +435,7 @@ void pass2(){
 	insertFILE(oplist_len,opcode, w,0,temp);
 	fprintf(w,"\nE.%06X\n",END_LOC);
 	fclose (f);
+	fclose (w);
 }
 
 main(){
